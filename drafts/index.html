@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>Главная — три варианта</title>
+<style>
+:root{--ground:#f4f1ea;--ink:#14120f;--ink-dim:#6d655b;--gold:#8a6a12;--rule:#e0d9cc;
+ --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+ --sans:"Helvetica Neue",Helvetica,Arial,sans-serif}
+@media(prefers-color-scheme:dark){
+ :root{--ground:#0b0a09;--ink:#f2ede4;--ink-dim:#9a9186;--gold:#c9a227;--rule:#241f1b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+ -webkit-font-smoothing:antialiased}
+main{max-width:620px;margin:0 auto;padding:72px 24px 96px}
+h1{font-family:var(--serif);font-weight:400;font-size:28px;letter-spacing:-.02em;margin:0}
+.hint{margin:10px 0 0;font-size:13px;line-height:1.65;color:var(--ink-dim)}
+ol{list-style:none;margin:40px 0 0;padding:0}
+li{border-top:1px solid var(--rule)}
+li:last-child{border-bottom:1px solid var(--rule)}
+a{display:block;padding:20px 2px;color:inherit;text-decoration:none;transition:padding-left .25s}
+a:hover{padding-left:8px}
+.k{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+h2{font-family:var(--serif);font-weight:400;font-size:21px;margin:7px 0 0;letter-spacing:-.01em}
+p{margin:6px 0 0;font-size:13.5px;line-height:1.6;color:var(--ink-dim)}
+.foot{margin:44px 0 0;font-size:12px;line-height:1.7;color:var(--ink-dim)}
+.foot a{display:inline;padding:0;color:var(--gold)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Главная — три варианта</h1>
+  <p class="hint">Первый экран у всех трёх — без фотографии, только слова. Слова те же, что на текущей
+  главной. Список «что я делаю / ещё я» расширяется одной строкой. Каждый вариант — EN/RU, светлая
+  и тёмная тема, без внешних запросов.</p>
+
+  <ol>
+    <li><a href="a.html">
+      <span class="k">A</span>
+      <h2>Крупная типографика</h2>
+      <p>Имя и высказывание во весь первый экран, список — ниже строками с маленькими картинками.</p>
+    </a></li>
+
+    <li><a href="b.html">
+      <span class="k">B</span>
+      <h2>Письмо</h2>
+      <p>Короткий абзац от первого лица вместо шапки, дальше список карточками с картинками.</p>
+    </a></li>
+
+    <li><a href="c.html">
+      <span class="k">C</span>
+      <h2>Указатель</h2>
+      <p>Одна колонка, оглавление как в книге: маленькие картинки слева, строка на каждый проект.</p>
+    </a></li>
+  </ol>
+
+  <p class="foot">Текущая главная — <a href="../">beskrovnykh.github.io</a> — не тронута.
+  Эта страница и варианты закрыты от индексации и ниоткуда не слинкованы.</p>
+</main>
+</body>
+</html>

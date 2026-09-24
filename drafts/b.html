@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>Andrei Beskrovnykh — вариант B</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='38' fill='%23c9a227'/></svg>">
+<style>
+:root{
+ --ground:#f4f1ea; --ink:#14120f; --ink-dim:#6d655b; --gold:#8a6a12; --rule:#e0d9cc; --card:#fbf9f4;
+ --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+ --sans:"Helvetica Neue",Helvetica,Arial,sans-serif}
+@media(prefers-color-scheme:dark){
+ :root:not([data-theme="light"]){--ground:#0b0a09;--ink:#f2ede4;--ink-dim:#9a9186;--gold:#c9a227;--rule:#241f1b;--card:#131110}}
+:root[data-theme="dark"]{--ground:#0b0a09;--ink:#f2ede4;--ink-dim:#9a9186;--gold:#c9a227;--rule:#241f1b;--card:#131110}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+ -webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 40px}
+.lbl{font-family:var(--sans);font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-dim)}
+
+.ctl{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:6px}
+.ctl .grp{display:flex;gap:2px;background:color-mix(in srgb,var(--ground) 78%,transparent);
+ border:1px solid var(--rule);border-radius:20px;padding:4px;backdrop-filter:blur(6px)}
+.ctl button{background:none;border:none;color:var(--ink-dim);font:600 12px/1 var(--sans);
+ letter-spacing:.14em;padding:6px 11px;border-radius:16px;cursor:pointer;transition:color .2s,background .2s}
+.ctl button.active{color:var(--ground);background:var(--gold)}
+.ctl .th{padding:6px 9px;display:flex;align-items:center}
+.ctl .th svg{width:15px;height:15px;display:block}
+.ctl .th:hover{color:var(--gold)}
+.ctl .th .i-sun{display:none}
+:root[data-theme="dark"] .ctl .th .i-sun{display:block}
+:root[data-theme="dark"] .ctl .th .i-moon{display:none}
+@media(prefers-color-scheme:dark){
+ :root:not([data-theme="light"]) .ctl .th .i-sun{display:block}
+ :root:not([data-theme="light"]) .ctl .th .i-moon{display:none}}
+
+/* первый экран — письмо */
+.letter{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+ max-width:760px;margin:0 auto;padding:104px 40px 64px}
+.head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+ padding-bottom:22px;border-bottom:1px solid var(--rule)}
+.head .nm{font-family:var(--serif);font-size:17px;letter-spacing:.02em}
+.note{margin:34px 0 0;font-family:var(--serif);font-size:clamp(19px,2.5vw,26px);line-height:1.55;
+ letter-spacing:-.01em;font-weight:400}
+.note em{font-style:italic;color:var(--gold)}
+.note + .note{margin-top:18px}
+.sig{margin:36px 0 0;font-size:13px;line-height:1.75;color:var(--ink-dim)}
+.down{display:inline-flex;align-items:center;gap:10px;margin-top:46px;align-self:flex-start;
+ padding:11px 18px 11px 20px;border:1px solid var(--rule);border-radius:999px;color:var(--ink-dim);
+ transition:border-color .3s,color .3s,transform .3s}
+.down:hover{border-color:var(--gold);color:var(--gold);transform:translateY(2px)}
+.down svg{width:16px;height:16px;flex:0 0 auto}
+
+/* карточки */
+.sect-h{display:flex;align-items:baseline;gap:18px;padding:0 0 20px}
+.sect-h .line{flex:1;height:1px;background:var(--rule)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--rule);
+ overflow:hidden;transition:border-color .25s,transform .25s}
+a.card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.card .pic{aspect-ratio:16/9;overflow:hidden;background:var(--ground);border-bottom:1px solid var(--rule)}
+.card .pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.card .pic.fit img{object-fit:contain;background:#f6f2ec}
+a.card:hover .pic img{transform:scale(1.04)}
+.card .txt{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+.card h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15;
+ letter-spacing:-.015em;margin:8px 0 0;transition:color .25s}
+.card p{margin:9px 0 0;font-size:13.5px;line-height:1.65;color:var(--ink-dim)}
+.go{margin-top:auto;padding-top:18px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.go .arr{display:inline-block;margin-left:8px;transition:transform .25s}
+a.card:hover h3{color:var(--gold)}
+a.card:hover .arr{transform:translateX(5px)}
+.card.soon .go{color:var(--ink-dim)}
+.card.soon .txt{padding-top:26px}
+
+/* главная карточка — во всю ширину, крупнее */
+.card.lead{grid-column:1/-1;flex-direction:row}
+.card.lead .pic{aspect-ratio:auto;flex:0 0 46%;border-bottom:none;border-right:1px solid var(--rule)}
+.card.lead .txt{padding:34px 36px 36px}
+.card.lead h3{font-size:36px}
+.card.lead p{font-size:15px;margin-top:12px;max-width:40ch}
+
+.also{margin-top:72px}
+.also .grid{grid-template-columns:1fr 1fr}
+
+footer{max-width:1000px;margin:92px auto 0;padding:34px 40px 84px;border-top:1px solid var(--rule);color:var(--ink-dim)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.fname{font-family:var(--serif);font-size:22px;letter-spacing:-.01em;color:var(--ink);margin:0}
+.frole{margin:5px 0 0;font-size:12px;letter-spacing:.05em}
+.links{margin:16px 0 0;font-size:12px;letter-spacing:.06em}
+.links a{border-bottom:1px solid color-mix(in srgb,var(--ink-dim) 40%,transparent);padding-bottom:1px;
+ transition:color .25s,border-color .25s}
+.links a:hover{color:var(--gold);border-color:var(--gold)}
+.links .sep{margin:0 12px;opacity:.35}
+.cr{margin:14px 0 0;font-size:11px;line-height:1.65;opacity:.62}
+
+.ru{display:none}
+:root.lang-ru .ru{display:revert}
+:root.lang-ru .en{display:none}
+
+@media(max-width:860px){
+ .wrap,footer{padding-left:18px;padding-right:18px}
+ .letter{padding:96px 18px 48px;min-height:auto}
+ .grid,.also .grid{grid-template-columns:1fr;gap:16px}
+ .card.lead{flex-direction:column}
+ .card.lead .pic{flex:none;aspect-ratio:16/9;border-right:none;border-bottom:1px solid var(--rule)}
+ .card.lead .txt{padding:22px 22px 26px}
+ .card.lead h3{font-size:28px}
+ .also{margin-top:52px}
+ .fgrid{grid-template-columns:1fr;gap:30px}
+ footer{margin-top:64px;padding-bottom:64px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+<script>
+(function(){var r=document.documentElement,ls;try{ls=localStorage}catch(e){}
+ var l;try{l=ls.getItem('lang')}catch(e){}
+ l=l||((navigator.language||'').toLowerCase().indexOf('ru')===0?'ru':'en');
+ r.classList.toggle('lang-ru',l==='ru');r.lang=l;
+ var t;try{t=ls.getItem('theme')}catch(e){}
+ if(t)r.setAttribute('data-theme',t);})();
+</script>
+</head>
+<body>
+
+<div class="ctl">
+  <div class="grp">
+    <button data-lang="ru">RU</button><button data-lang="en" class="active">EN</button>
+  </div>
+  <div class="grp">
+    <button class="th" id="theme" aria-label="Light / dark theme" title="Light / dark theme">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    </button>
+  </div>
+</div>
+
+<section class="letter">
+  <div class="head">
+    <span class="nm"><span class="ru">Андрей Бескровных</span><span class="en">Andrei Beskrovnykh</span></span>
+    <span class="lbl">
+      <span class="ru">инженер, фридайвер, фотограф</span>
+      <span class="en">engineer, freediver, photographer</span>
+    </span>
+  </div>
+
+  <p class="note">
+    <span class="ru">Я строю Doktome — ИИ-собеседника, который говорит правду и не уходит. Ухожу <em>на глубину</em> на одном вдохе: инструктор AIDA, 6:03 лицом в воду. И снимаю людей, которых легко не заметить, — документальные серии, снятые на телефон.</span>
+    <span class="en">I build Doktome — an AI companion that tells you the truth and doesn’t walk away. I go <em>deep</em> on a single breath: AIDA instructor, 6:03 face down. And I photograph people who are easy to overlook — documentary series, shot on a phone.</span>
+  </p>
+
+  <p class="sig">
+    <span class="ru">Инженер-программист. Шри-Ланка и Индия, 2026. Первые тексты скоро.</span>
+    <span class="en">Software engineer. Sri Lanka and India, 2026. First essays soon.</span>
+  </p>
+
+  <a class="down" href="#make">
+    <span class="lbl"><span class="ru">что я делаю</span><span class="en">what I make</span></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor"
+      stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<div class="wrap">
+
+  <section id="make">
+    <div class="sect-h">
+      <span class="lbl"><span class="ru">Что я делаю</span><span class="en">What I make</span></span>
+      <span class="line"></span>
+    </div>
+
+    <div class="grid">
+
+      <a class="card lead" href="https://doktome.app">
+        <span class="pic fit"><img src="img/doktome.jpg" width="1000" height="525" loading="lazy" alt="Doktome"></span>
+        <span class="txt">
+          <span class="lbl">Doktome</span>
+          <h3><span class="ru">Друг, который помнит</span><span class="en">The friend who remembers</span></h3>
+          <p>
+            <span class="ru">ИИ-собеседник, который говорит правду и не уходит. То, что я строю.</span>
+            <span class="en">An AI companion that tells you the truth and doesn’t walk away. What I’m building.</span>
+          </p>
+          <span class="go"><span class="ru">Открыть</span><span class="en">Open</span><span class="arr">→</span></span>
+        </span>
+      </a>
+
+      <a class="card" href="https://beskrovnykh.github.io/photos/">
+        <span class="pic"><img src="img/photographs.jpg" width="360" height="640" loading="lazy" alt=""></span>
+        <span class="txt">
+          <span class="lbl"><span class="ru">Фотографии · 13 серий</span><span class="en">Photographs · 13 series</span></span>
+          <h3><span class="ru">Люди, которых легко не заметить</span><span class="en">People who are easy to overlook</span></h3>
+          <p>
+            <span class="ru">13 документальных серий, снятых на телефон. Шри-Ланка и Индия, 2026.</span>
+            <span class="en">13 documentary series, shot on a phone. Sri Lanka and India, 2026.</span>
+          </p>
+          <span class="go"><span class="ru">Смотреть</span><span class="en">View</span><span class="arr">→</span></span>
+        </span>
+      </a>
+
+      <div class="card soon">
+        <span class="txt">
+          <span class="lbl"><span class="ru">Тексты · скоро</span><span class="en">Writing · soon</span></span>
+          <h3><span class="ru">Первые тексты скоро</span><span class="en">First essays soon</span></h3>
+          <p>
+            <span class="ru">Как я сюда пришёл и что меня уравновешивает.</span>
+            <span class="en">How I got here, and what balances me.</span>
+          </p>
+          <span class="go"><span class="ru">Скоро</span><span class="en">Soon</span></span>
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="also">
+    <div class="sect-h">
+      <span class="lbl"><span class="ru">Ещё я</span><span class="en">Also me</span></span>
+      <span class="line"></span>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="https://www.instagram.com/a.beskrovnykh/" target="_blank" rel="noopener">
+        <span class="pic"><img src="img/freediving.jpg" width="362" height="640" loading="lazy" alt=""></span>
+        <span class="txt">
+          <span class="lbl"><span class="ru">Фридайвинг · инструктор AIDA</span><span class="en">Freediving · AIDA instructor</span></span>
+          <h3><span class="ru">6:03 лицом в воду</span><span class="en">6:03 face down</span></h3>
+          <p>
+            <span class="ru">Инструктор AIDA. От страха к свободе.</span>
+            <span class="en">AIDA instructor. From fear to freedom.</span>
+          </p>
+          <span class="go">Instagram<span class="arr">→</span></span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="fgrid">
+    <div>
+      <p class="fname">Andrei Beskrovnykh</p>
+      <p class="frole">
+        <span class="ru">инженер-программист, фридайвер, фотограф</span>
+        <span class="en">software engineer, freediver, photographer</span>
+      </p>
+      <p class="links">
+        <a href="https://instagram.com/a.beskrovnykh" target="_blank" rel="noopener">Instagram</a>
+        <span class="sep">&middot;</span>
+        <a href="https://t.me/beskrovnykh" target="_blank" rel="noopener">Telegram</a>
+        <span class="sep">&middot;</span>
+        <a href="https://doktome.app">Doktome</a>
+      </p>
+    </div>
+    <div>
+      <p class="cr">
+        <span class="ru">&copy; 2026 Андрей Бескровных. Фотографии и тексты — авторские, использование без разрешения не допускается.</span>
+        <span class="en">&copy; 2026 Andrei Beskrovnykh. Photographs and texts are the author&rsquo;s; no use without permission.</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, ls=null;
+  try{ls=localStorage}catch(e){}
+  var btns=document.querySelectorAll('.ctl button[data-lang]');
+  function setLang(l){
+    root.classList.toggle('lang-ru', l==='ru'); root.lang=l;
+    btns.forEach(function(b){b.classList.toggle('active', b.dataset.lang===l)});
+    try{ls.setItem('lang',l)}catch(e){}
+  }
+  btns.forEach(function(b){b.onclick=function(){setLang(b.dataset.lang)}});
+  var sl; try{sl=ls.getItem('lang')}catch(e){}
+  setLang(sl || ((navigator.language||'').toLowerCase().indexOf('ru')===0 ? 'ru' : 'en'));
+  function setTheme(t){
+    if(t){root.setAttribute('data-theme',t); try{ls.setItem('theme',t)}catch(e){}}
+    else {root.removeAttribute('data-theme'); try{ls.removeItem('theme')}catch(e){}}
+  }
+  var st; try{st=ls.getItem('theme')}catch(e){}
+  if(st) setTheme(st);
+  document.getElementById('theme').onclick=function(){
+    var dark = root.getAttribute('data-theme')==='dark' ||
+      (!root.hasAttribute('data-theme') && matchMedia('(prefers-color-scheme:dark)').matches);
+    setTheme(dark ? 'light' : 'dark');
+  };
+})();
+</script>
+</body>
+</html>
