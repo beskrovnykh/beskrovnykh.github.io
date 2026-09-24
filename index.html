@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Andrei Beskrovnykh</title>
+<meta name="description" content="Andrei Beskrovnykh — engineer, freediver, photographer. Building Doktome — the friend who remembers.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%231b4b5a'/></svg>">
+<style>
+:root{--bg:#f7f5f0;--fg:#1c1b19;--mut:#76716a;--line:#e3ded4;--acc:#1b4b5a;--hover:#efebe3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121416;--fg:#e9e6e0;--mut:#8f8a82;--line:#262a2d;--acc:#8fc3d1;--hover:#1a1d20}}
+:root[data-theme="dark"]{--bg:#121416;--fg:#e9e6e0;--mut:#8f8a82;--line:#262a2d;--acc:#8fc3d1;--hover:#1a1d20}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.55 Georgia,"PT Serif",serif;-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;padding:56px 16px 64px}
+.lang{float:right;font:13px -apple-system,system-ui,sans-serif;letter-spacing:.04em}
+.lang button{background:none;border:0;color:var(--mut);cursor:pointer;padding:2px 4px;font:inherit}
+.lang button.on{color:var(--fg);text-decoration:underline;text-underline-offset:3px}
+h1{font-weight:400;font-size:34px;line-height:1.15;margin:0 0 6px}
+.who{color:var(--mut);font-size:17px;margin:0 0 48px}
+a.band{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--line);padding:26px 4px 28px;transition:background .15s}
+a.band:last-of-type{border-bottom:1px solid var(--line)}
+a.band:hover{background:var(--hover)}
+.kicker{font:12px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+.title{font-size:24px;line-height:1.25}
+.title .arr{color:var(--mut);transition:transform .15s;display:inline-block;margin-left:6px}
+a.band:hover .arr{transform:translateX(4px)}
+.sub{color:var(--mut);font-size:16px;margin-top:6px}
+.soon{cursor:default}.soon:hover{background:none}
+footer{margin-top:40px;color:var(--mut);font:13px -apple-system,system-ui,sans-serif}
+footer a{color:var(--mut)}
+[data-l="ru"]{display:none}
+html[lang="ru"] [data-l="en"]{display:none}
+html[lang="ru"] [data-l="ru"]{display:revert}
+</style>
+</head>
+<body>
+<main>
+  <div class="lang"><button data-set="en" class="on">EN</button><button data-set="ru">RU</button></div>
+
+  <h1><span data-l="en">Andrei Beskrovnykh</span><span data-l="ru">Андрей Бескровных</span></h1>
+  <p class="who"><span data-l="en">Engineer · freediver · photographer</span><span data-l="ru">Инженер · фридайвер · фотограф</span></p>
+
+  <a class="band" href="https://doktome.app">
+    <div class="kicker">Doktome</div>
+    <div class="title"><span data-l="en">The friend who remembers</span><span data-l="ru">Друг, который помнит</span><span class="arr">→</span></div>
+    <div class="sub"><span data-l="en">An AI companion that tells you the truth and doesn’t walk away. What I’m building.</span><span data-l="ru">ИИ-собеседник, который говорит правду и не уходит. То, что я строю.</span></div>
+  </a>
+
+  <a class="band" href="https://beskrovnykh.github.io/photos/">
+    <div class="kicker"><span data-l="en">Photographs</span><span data-l="ru">Фотографии</span></div>
+    <div class="title"><span data-l="en">People who are easy to overlook</span><span data-l="ru">Люди, которых легко не заметить</span><span class="arr">→</span></div>
+    <div class="sub"><span data-l="en">Documentary series, shot on a phone. Sri Lanka and India, 2026.</span><span data-l="ru">Документальные серии, снятые на телефон. Шри-Ланка и Индия, 2026.</span></div>
+  </a>
+
+  <a class="band" href="https://www.instagram.com/a.beskrovnykh/">
+    <div class="kicker"><span data-l="en">Freediving</span><span data-l="ru">Фридайвинг</span></div>
+    <div class="title"><span data-l="en">6:03 face down</span><span data-l="ru">6:03 лицом в воду</span><span class="arr">→</span></div>
+    <div class="sub"><span data-l="en">AIDA instructor. From fear to freedom.</span><span data-l="ru">Инструктор AIDA. От страха к свободе.</span></div>
+  </a>
+
+  <a class="band soon" aria-disabled="true">
+    <div class="kicker"><span data-l="en">Writing</span><span data-l="ru">Тексты</span></div>
+    <div class="title"><span data-l="en">First essays soon</span><span data-l="ru">Первые тексты скоро</span></div>
+    <div class="sub"><span data-l="en">How I got here, and what balances me.</span><span data-l="ru">Как я сюда пришёл и что меня уравновешивает.</span></div>
+  </a>
+
+  <footer>© 2026 Andrei Beskrovnykh</footer>
+</main>
+<script>
+(function(){
+  var saved; try{saved=localStorage.getItem('lang')}catch(e){}
+  var lang = saved || ((navigator.language||'').toLowerCase().indexOf('ru')===0 ? 'ru' : 'en');
+  function set(l){document.documentElement.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.set===l)});
+    try{localStorage.setItem('lang',l)}catch(e){}}
+  set(lang);
+  document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){set(b.dataset.set)}});
+})();
+</script>
+</body>
+</html>
