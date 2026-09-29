@@ -34,7 +34,8 @@ code{font-size:16px}
 footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font:14px var(--sans);color:var(--ink-dim)}
 footer a{color:var(--ink)}
 .sub{font:15px var(--sans);margin:40px 0 0}
-.tgrow{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 0}.tgsub{margin-left:auto}
+.tgrow{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:24px 0 0}
+@media(max-width:520px){.tgb{font-size:14px;padding:8px 14px}}
 .cm{margin:48px 0 0;border-top:1px solid var(--rule);padding-top:20px}
 .cm .cmt{background:none;border:0;padding:0;cursor:pointer;font:10px var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
 .cm .cmt::after{content:" +"}.cm.open .cmt::after{content:" −"}
