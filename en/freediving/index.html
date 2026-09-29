@@ -30,8 +30,7 @@ figcaption b{color:var(--ink);font-weight:400;font-family:var(--serif);font-size
 footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font:14px var(--sans);color:var(--ink-dim)}
 footer a{color:var(--ink)}
 @media(max-width:520px){.nums b{font-size:24px}}
-.lang{position:absolute;top:24px;right:16px;font:12px var(--sans);letter-spacing:.2em;color:var(--ink-dim)}.lang a{color:var(--ink-dim);text-decoration:none}.lang a:hover{color:var(--gold)}.lang b{font-weight:400;color:var(--ink)}
-main{position:relative}
+.lang{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:2px;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:4px}.lang a,.lang b{font:600 12px/1 var(--sans);letter-spacing:.14em;padding:6px 12px;border-radius:16px;text-decoration:none;color:#b9b2a8}.lang a:hover{color:#f2ede4}.lang b{color:#111;background:#c9a227}
 </style>
 <link rel="alternate" hreflang="ru" href="https://beskrovnykh.github.io/freediving/">
 <link rel="alternate" hreflang="en" href="https://beskrovnykh.github.io/en/freediving/">
@@ -39,7 +38,7 @@ main{position:relative}
 </head>
 <body>
 <main>
-<div class="lang" role="navigation" aria-label="Language"><a href="/freediving/" hreflang="ru" onclick="try{localStorage.setItem('lang','ru')}catch(e){}">RU</a> · <b>EN</b></div>
+<div class="lang" role="navigation" aria-label="Language"><a href="/freediving/" hreflang="ru" onclick="try{localStorage.setItem('lang','ru')}catch(e){}">RU</a><b>EN</b></div>
 <a class="back" href="/en/">← Andrei Beskrovnykh</a>
 <h1>Freediving</h1>
 <p class="lead">AIDA instructor. I dive on a single breath, in the pool and in the sea.</p>
