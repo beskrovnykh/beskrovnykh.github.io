@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Andrei Beskrovnykh</title><style>
+:root{--ink:#f2ede4;--ink-dim:#9a9186;--ground:#0b0a09;--gold:#c9a227;--rule:#241f1b;
+ --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+ --sans:"Helvetica Neue",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.lbl{font-family:var(--sans);font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-dim)}
+/* первый экран: вода слева, высказывание справа */
+.hero{min-height:100svh;display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:72px;
+ max-width:1200px;margin:0 auto;padding:56px 40px}
+.hero img{width:100%;height:auto;display:block}
+.say{font-family:var(--serif);font-size:38px;line-height:1.28;letter-spacing:-.012em;margin:26px 0 0;font-weight:400}
+.say em{font-style:italic;color:var(--gold)}
+.bio{margin:30px 0 0;font-size:13px;line-height:1.7;color:var(--ink-dim);max-width:40ch}
+.bio b{font-weight:600;color:var(--ink)}
+.down{display:inline-flex;align-items:center;gap:10px;margin-top:40px;padding:11px 18px 11px 20px;
+ border:1px solid var(--rule);border-radius:999px;color:var(--ink-dim);
+ transition:border-color .3s,color .3s,transform .3s}
+.down:hover{border-color:var(--gold);color:var(--gold);transform:translateY(2px)}
+.down svg{width:16px;height:16px;flex:0 0 auto}
+.role{margin:22px 0 0;font-size:13px;line-height:1.7;color:var(--ink);font-weight:600;max-width:40ch}
+/* три серии */
+.feat{max-width:1200px;margin:0 auto;padding:0 40px}
+.blk{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:118px 0;border-top:1px solid var(--rule)}
+.blk:nth-child(odd) .ph{order:2}
+.blk img{width:100%;height:auto;display:block;filter:saturate(.94);transition:filter .45s}
+.blk:hover img{filter:saturate(1.05)}
+.blk h2{font-family:var(--serif);font-size:42px;line-height:1.05;letter-spacing:-.02em;margin:14px 0 14px;font-weight:400}
+.blk p{font-size:15px;line-height:1.65;color:var(--ink-dim);margin:0 0 24px;max-width:34ch}
+.more{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+/* остальное */
+.rest{max-width:1200px;margin:0 auto;padding:110px 40px 0;border-top:1px solid var(--rule)}
+.rest ul{list-style:none;margin:26px 0 0;padding:0;columns:2;column-gap:72px}
+.rest li{break-inside:avoid}
+.rest a{display:flex;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.rest .nm{font-family:var(--serif);font-size:20px;letter-spacing:-.01em;transition:color .25s}
+.rest .ds{font-size:12px;color:var(--ink-dim)}
+.rest a:hover .nm{color:var(--gold)}
+footer{max-width:1200px;margin:96px auto 0;padding:34px 40px 90px;border-top:1px solid var(--rule);
+ color:var(--ink-dim)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.fname{font-family:var(--serif);font-size:22px;letter-spacing:-.01em;color:var(--ink);margin:0;text-transform:none}
+.frole{margin:5px 0 0;font-size:12px;letter-spacing:.05em;color:var(--ink-dim);text-transform:none}
+.links{margin:16px 0 0;font-size:12px;letter-spacing:.06em;text-transform:none}
+.links a{color:var(--ink-dim);border-bottom:1px solid rgba(154,145,134,.35);padding-bottom:1px;transition:color .25s,border-color .25s}
+.links a:hover{color:var(--gold);border-color:var(--gold)}
+.links .sep{margin:0 12px;opacity:.35}
+.fmeta{margin:6px 0 0;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-dim)}
+.cr{margin:14px 0 0;font-size:11px;line-height:1.65;letter-spacing:.01em;color:var(--ink-dim);opacity:.62;text-transform:none}
+.ru{display:none}body.lang-ru .ru{display:revert}body.lang-ru .en{display:none}
+.lang-toggle{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:2px;background:rgba(0,0,0,.7);
+ border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:4px}
+.lang-toggle button{background:none;border:none;color:#b9b2a8;font:600 12px/1 var(--sans);letter-spacing:.14em;
+ padding:6px 12px;border-radius:16px;cursor:pointer}
+.lang-toggle button.active{color:#111;background:var(--gold)}
+@media(max-width:880px){
+ .hero,.blk{grid-template-columns:1fr;gap:30px;padding-left:18px;padding-right:18px}
+ .hero{min-height:auto;padding-top:56px;padding-bottom:56px}
+ .blk{padding:64px 0}.blk:nth-child(odd) .ph{order:0}
+ .say{font-size:26px}.blk h2{font-size:29px}
+ .feat,.rest,footer{padding-left:18px;padding-right:18px}
+ .rest ul{columns:1}
+ .fgrid{grid-template-columns:1fr;gap:34px}
+}
+</style><link rel="alternate" hreflang="ru" href="https://beskrovnykh.github.io/photos/index.html"><link rel="alternate" hreflang="en" href="https://beskrovnykh.github.io/en/photos/index.html"></head><body><div class="lang-toggle"><button data-lang="ru">RU</button><button data-lang="en" class="active">EN</button></div><section class="hero"><div class="ph"><img src="/photos/img/3c439e9680a2fe68.jpg" width="787" height="1400" alt=""></div><div><span class="lbl"><span class="ru">Андрей Бескровных · фотографические серии</span><span class="en">Andrei Beskrovnykh · photographic series</span></span><p class="say"><span class="ru">Я живу у <em>океана</em> и снимаю людей, которых легко не заметить.</span><span class="en">I live by the <em>ocean</em> and photograph people who are easy to overlook.</span></p><p class="bio"><span class="ru">Документальные серии и портреты. Снимаю на телефон; серия собирается потом, из того, что случилось.</span><span class="en">Documentary series and portraits. Shot on a phone; the series comes together afterwards, out of what happened.</span></p><a class="down" href="#series"><span class="lbl"><span class="ru">серии</span><span class="en">series</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></section><div class="feat" id="series"><a class="blk" href="jaffna-mechanic.html"><div class="ph"><img src="/photos/img/cd9223dd0f472219.jpg" width="787" height="1400" alt=""></div><div><span class="lbl"><span class="ru">Серия</span><span class="en">Series</span></span><h2>Mechanic</h2><p><span class="ru">один день с Джованни</span><span class="en">one day with Giovanni</span></p><span class="more"><span class="ru">Смотреть</span><span class="en">View</span></span></div></a><a class="blk" href="jaffna-blessing.html"><div class="ph"><img src="/photos/img/24390e980012e786.jpg" width="787" height="1400" alt=""></div><div><span class="lbl"><span class="ru">Серия</span><span class="en">Series</span></span><h2>Blessed to Build</h2><p><span class="ru">люди поднимают свой город</span><span class="en">people rebuilding their city</span></p><span class="more"><span class="ru">Смотреть</span><span class="en">View</span></span></div></a><a class="blk" href="pettah-story.html"><div class="ph"><img src="/photos/img/cc7d13d3ccc09a56.jpg" width="787" height="1400" alt=""></div><div><span class="lbl"><span class="ru">Серия</span><span class="en">Series</span></span><h2>Pettah</h2><p><span class="ru">уличная серия</span><span class="en">the street series</span></p><span class="more"><span class="ru">Смотреть</span><span class="en">View</span></span></div></a></div><section class="rest"><span class="lbl"><span class="ru">Все серии</span><span class="en">All series</span></span><ul><li><a href="beira-story.html"><span class="nm">Beira</span><span class="ds"><span class="ru">на синем часе</span><span class="en">at blue hour</span></span></a></li><li><a href="gangaramaya-dark.html"><span class="nm">Gangaramaya</span><span class="ds"><span class="ru">в темноте</span><span class="en">in the dark</span></span></a></li><li><a href="galleface-place.html"><span class="nm">Galle Face</span><span class="ds"><span class="ru">ночь у воды</span><span class="en">night by the water</span></span></a></li><li><a href="galleface-story.html"><span class="nm">Unfinished Story</span><span class="ds"><span class="ru">пары на Galle Face</span><span class="en">couples at Galle Face</span></span></a></li><li><a href="marine-drive.html"><span class="nm">Marine Drive</span><span class="ds"><span class="ru">берег и железная дорога</span><span class="en">the shore and the railway</span></span></a></li><li><a href="regulars.html"><span class="nm">Regulars</span><span class="ds"><span class="ru">станция Kollupitiya</span><span class="en">Kollupitiya station</span></span></a></li><li><a href="solitude.html"><span class="nm">Solitude</span><span class="ds"><span class="ru">у моря, один</span><span class="en">alone by the sea</span></span></a></li><li><a href="fantazia.html"><span class="nm">Fantasy</span><span class="ds"><span class="ru">воображаемое и настоящее</span><span class="en">the imagined and the real</span></span></a></li><li><a href="nilaveli.html"><span class="nm">Nilaveli</span><span class="ds"><span class="ru">заплыв, 5 км вдоль берега</span><span class="en">a 5 km swim along the shore</span></span></a></li><li><a href="one-wave.html"><span class="nm">One Wave</span><span class="ds"><span class="ru">океан убирает следы</span><span class="en">the ocean takes the traces back</span></span></a></li></ul></section><footer><div class="fgrid"><div class="fl"><p class="fname">Andrei Beskrovnykh</p><p class="frole"><span class="ru">инженер-программист, фридайвер</span><span class="en">software engineer, freediver</span></p><p class="links"><a href="https://instagram.com/a.beskrovnykh" target="_blank" rel="noopener">Instagram</a><span class="sep">&middot;</span><a href="https://t.me/beskrovnykh" target="_blank" rel="noopener">Telegram</a></p></div><div class="fr"><p class="fmeta"><span class="ru">13 серий &middot; Шри-Ланка и Индия &middot; 2026</span><span class="en">13 series &middot; Sri Lanka and India &middot; 2026</span></p><p class="cr"><span class="ru">&copy; 2026 Андрей Бескровных. Фотографии и тексты — авторские, использование без разрешения не допускается.</span><span class="en">&copy; 2026 Andrei Beskrovnykh. Photographs and texts are the author&rsquo;s; no use without permission.</span></p></div></div></footer><script>(function(){document.querySelectorAll('.lang-toggle button').forEach(function(x){x.addEventListener('click',function(){var l=x.getAttribute('data-lang');try{localStorage.setItem('lang',l)}catch(e){}if(l!=='en')location.href=l==='ru'?'/photos/index.html':'/en/photos/index.html';});});})();</script></body></html>
