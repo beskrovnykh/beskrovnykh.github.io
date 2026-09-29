@@ -25,6 +25,10 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font:14
 footer a{color:var(--ink)}
 .sub{font:15px var(--sans);margin:40px 0 0}
 .tgrow{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 0}.tgsub{margin-left:auto}
+.cm{margin:48px 0 0;border-top:1px solid var(--rule);padding-top:20px}
+.cm .cmt{background:none;border:0;padding:0;cursor:pointer;font:10px var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.cm .cmt::after{content:" +"}.cm.open .cmt::after{content:" −"}
+.cmw{max-height:0;overflow:hidden}.cm.open .cmw{max-height:none;margin-top:16px}
 .tgb{display:inline-block;font:15px var(--sans);padding:10px 18px;border:1px solid var(--gold);border-radius:22px;
  text-decoration:none;color:var(--gold)}.tgb:hover{background:var(--gold);color:var(--ground)}
 .lang{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:2px;background:rgba(0,0,0,.7);
