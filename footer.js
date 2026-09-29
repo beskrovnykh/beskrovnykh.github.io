@@ -16,14 +16,14 @@
     'font:14px/1.6 "Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink-dim,#9a9186);text-align:left}' +
     'main #site-foot{padding-left:0;padding-right:0;margin-top:48px}' +
     '#site-foot .me{font:20px Georgia,"Iowan Old Style","Times New Roman",serif;color:var(--ink,#f2ede4);text-decoration:none}' +
-    '#site-foot nav{margin:10px 0 18px}#site-foot nav a{color:var(--ink-dim,#9a9186);text-decoration:none;margin-right:16px}' +
-    '#site-foot nav a:hover,#site-foot .me:hover{color:var(--gold,#c9a227)}#site-foot .cr{font-size:12px;opacity:.8}';
+    '#site-foot .links{margin:10px 0 18px}#site-foot .links a{color:var(--ink-dim,#9a9186);text-decoration:none;margin-right:16px}' +
+    '#site-foot .links a:hover,#site-foot .me:hover{color:var(--gold,#c9a227)}#site-foot .cr{font-size:12px;opacity:.8}';
   document.head.appendChild(css);
   f.innerHTML =
     '<a class="me" href="' + p + '/">' + t.me + '</a>' +
-    '<nav><a href="' + p + '/writing/">' + t.w + '</a><a href="' + p + '/photos/">' + t.ph + '</a>' +
+    '<div class="links"><a href="' + p + '/writing/">' + t.w + '</a><a href="' + p + '/photos/">' + t.ph + '</a>' +
     '<a href="' + p + '/freediving/">' + t.fd + '</a>' +
     '<a href="https://t.me/doktomebot?start=blog_foot' + (en ? '_en' : '') + '">' + t.dok + '</a>' +
-    '<a href="https://t.me/beskrovnykh">Telegram</a></nav>' +
+    '<a href="https://t.me/beskrovnykh">Telegram</a></div>' +
     '<div class="cr">' + t.cr + '</div>';
 })();
