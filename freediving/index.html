@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Фридайвинг · Андрей Бескровных</title>
+<meta name="description" content="Фридайвинг: статика 6:23, 125 м без ласт на соревнованиях, 131 м на тренировке. Инструктор AIDA.">
+<style>
+:root{--ground:#f4f1ea;--ink:#14120f;--ink-dim:#6d655b;--gold:#8a6a12;--rule:#e0d9cc;
+ --serif:Georgia,"Iowan Old Style","Times New Roman",serif;--sans:"Helvetica Neue",Helvetica,Arial,sans-serif}
+@media(prefers-color-scheme:dark){:root{--ground:#0b0a09;--ink:#f2ede4;--ink-dim:#9a9186;--gold:#c9a227;--rule:#241f1b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+main{max-width:640px;margin:0 auto;padding:40px 16px 80px}
+.back{font:12px var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink-dim)}
+h1{font-weight:400;font-size:34px;line-height:1.15;margin:40px 0 12px}
+.lead{font:17px/1.55 var(--sans);margin:0 0 40px;color:var(--ink-dim)}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:0 0 56px}
+.nums div{padding:20px 0}
+.nums div+div{padding-left:16px;border-left:1px solid var(--rule)}
+.nums b{display:block;font-weight:400;font-size:30px;line-height:1.1}
+.nums span{display:block;font:12px/1.4 var(--sans);color:var(--ink-dim);margin-top:6px}
+figure{margin:0 0 56px}
+video{display:block;width:100%;height:auto;background:#000;border-radius:4px}
+video.tall{max-width:360px;margin:0 auto}
+figcaption{font:15px/1.5 var(--sans);color:var(--ink-dim);margin-top:12px}
+figcaption b{color:var(--ink);font-weight:400;font-family:var(--serif);font-size:20px;display:block;margin-bottom:2px}
+.card{display:inline-block;width:15px;height:21px;margin-left:10px;vertical-align:-2px;background:#c62828;border-radius:2px;
+ transform:rotate(8deg);box-shadow:0 1px 3px rgba(0,0,0,.35)}
+footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font:14px var(--sans);color:var(--ink-dim)}
+footer a{color:var(--ink)}
+@media(max-width:520px){.nums b{font-size:24px}}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="/">← Андрей Бескровных</a>
+<h1>Фридайвинг</h1>
+<p class="lead">Инструктор AIDA. Ныряю на одном вдохе, в бассейне и в море.</p>
+
+<div class="nums">
+<div><b>6:23</b><span>статика<br>соревнования, 2025</span></div>
+<div><b>125 м</b><span>без ласт<br>соревнования, 2025</span></div>
+<div><b>131 м</b><span>без ласт<br>тренировка, 2025</span></div>
+</div>
+
+<figure>
+<video controls playsinline preload="none" poster="dnf-125-tomsk.jpg" src="dnf-125-tomsk.mp4"></video>
+<figcaption><b>125 м без ласт</b>Соревнования в Томске, июнь 2025.</figcaption>
+</figure>
+
+<figure>
+<video class="tall" controls playsinline preload="none" poster="dnf-131-panglao.jpg" src="dnf-131-panglao.mp4"></video>
+<figcaption><b>131 м без ласт</b>Тренировка в Панглао, Филиппины, 2025. Тренировались вместе с Деборой Мариотти, пока я проходил инструкторский курс у Джорджо Мариотти.</figcaption>
+</figure>
+
+<figure>
+<video controls playsinline preload="none" poster="dnf-100-bangkok.jpg" src="dnf-100-bangkok.mp4"></video>
+<figcaption><b>100 м без ласт <i class="card" title="Красная карточка" aria-label="Красная карточка"></i></b>AIDA Thailand Freediving Pool Championship, Бангкок, сентябрь 2025.</figcaption>
+</figure>
+
+<footer><a href="/">На главную</a></footer>
+</main>
+</body>
+</html>
