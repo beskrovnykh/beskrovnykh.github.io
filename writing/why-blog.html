@@ -28,7 +28,7 @@ p,li{font-size:19px;line-height:1.65}
 p{margin:0 0 1.2em}ul,ol{padding-left:1.3em;margin:0 0 1.2em}li{margin:.3em 0}
 .next{margin:40px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
 .next span{display:block;font:10px var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.epi{text-align:right;color:var(--ink-dim);font-size:17px;margin:0 0 2em 20%}
+.epi{font-style:italic;text-align:right;color:var(--ink-dim);margin:0 0 2em 20%}
 blockquote{margin:0 0 1.2em;padding-left:16px;border-left:2px solid var(--rule);color:var(--ink-dim)}
 hr{border:0;border-top:1px solid var(--rule);margin:2em 0}
 code{font-size:16px}
@@ -38,9 +38,13 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font:14
 footer a{color:var(--ink)}
 .sub{font:15px var(--sans);margin:40px 0 0}
 .tgrow{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:24px 0 0}
+.tgrow.solo{justify-content:flex-end}
+.dokcta{margin:32px 0 0}.dokcta a{display:inline-block;font:16px var(--sans);padding:12px 24px;border-radius:24px;
+ background:var(--gold);color:var(--ground);text-decoration:none}.dokcta a:hover{opacity:.88}
 @media(max-width:520px){.tgb{font-size:14px;padding:8px 14px}}
-.cm{margin:32px 0 0}
-.cm .cmt{background:none;border:0;padding:0;cursor:pointer;font:10px var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.after{margin:20px 0 0;font:10px var(--sans);letter-spacing:.34em;text-transform:uppercase}
+.after a,.after .cmt{background:none;border:0;padding:0;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--gold);text-decoration:none}
+.after .dot{color:var(--ink-dim);margin:0 12px}.cmlink{font:15px var(--sans);margin:12px 0 0}.cmlink a{color:var(--gold)}
 .cm .cmt::after{content:" +"}.cm.open .cmt::after{content:" −"}
 .cmw{max-height:0;overflow:hidden}.cm.open .cmw{max-height:none;margin-top:16px}
 .tgb{display:inline-block;font:15px var(--sans);padding:10px 18px;border:1px solid var(--gold);border-radius:22px;
@@ -64,7 +68,7 @@ footer a{color:var(--ink)}
 <p>Главное правило – честность. То есть это должно быть правдой и искренне. Я не ставлю норму по количеству публикаций, которые мне нужно сделать, но в каждой публикации будет ссылка с намерением, о чем я буду писать в следующий раз, и следующая публикация должна раскрывать именно этот шаг. Это я называю "ходить прямо". Так я буду дисциплинировать себя. В этом проекте с блогом я буду узким местом. Потому что я на самом деле не люблю публичность.</p>
 <p>Мне придется себя расширить.</p>
 <p class="next"><span>В следующий раз</span><a href="https://beskrovnykh.github.io/writing/vision.html">Что я хочу построить</a>.</p>
-<div class="tgrow"><a class="tgb tgsub" href="https://t.me/doktome">Подписаться</a></div>
+<p class="dokcta"><a href="https://t.me/doktomebot?start=blog_why-blog">Поговорить с Доком</a></p><p class="after"><a href="https://t.me/doktome">Подписаться</a></p>
 <footer>Написать мне: <a href="https://t.me/beskrovnykh">Telegram</a><p class="cr">© 2026 Андрей Бескровных. Фотографии и тексты — авторские, использование без разрешения не допускается.</p></footer>
 </main>
 </body>
