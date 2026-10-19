@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Что говорят люди · Andrei Beskrovnykh</title>
+<meta name="description" content="Возьми на себя ответственность за свой продукт. Назови цену.">
+<meta name="post-date" content="2026-10-19">
+<meta property="og:title" content="Что говорят люди">
+<meta property="og:description" content="Возьми на себя ответственность за свой продукт. Назови цену.">
+<link rel="alternate" hreflang="ru" href="https://beskrovnykh.github.io/writing/cto-govorat-ludi.html">
+<style>
+:root{--ground:#f4f1ea;--ink:#14120f;--ink-dim:#6d655b;--gold:#8a6a12;--rule:#e0d9cc;
+ --serif:Georgia,'Iowan Old Style','Times New Roman',serif;--sans:"Helvetica Neue",Helvetica,Arial,sans-serif}
+@media(prefers-color-scheme:dark){:root{--ground:#0b0a09;--ink:#f2ede4;--ink-dim:#9a9186;--gold:#c9a227;--rule:#241f1b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+main{max-width:640px;margin:0 auto;padding:40px 16px 80px}
+a{color:var(--gold)}
+.back{font:12px var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink-dim)}
+.lbl{font:10px var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin:48px 0 10px}
+h1{font-weight:400;font-size:34px;line-height:1.15;margin:0 0 8px}
+h2{font-weight:400;font-size:25px;line-height:1.25;margin:1.8em 0 .6em}
+h3{font-weight:400;font-size:21px;margin:1.5em 0 .5em}
+.date{font:13px var(--sans);color:var(--ink-dim);margin:0 0 36px;padding-bottom:28px;border-bottom:1px solid var(--rule)}
+p,li{font-size:19px;line-height:1.65}
+p{margin:0 0 1.2em}ul,ol{padding-left:1.3em;margin:0 0 1.2em}li{margin:.3em 0}
+.next{margin:40px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.next span{display:block;font:10px var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.epi{font-style:italic;text-align:right;color:var(--ink-dim);margin:0 0 2em 20%}
+blockquote{margin:0 0 1.2em;padding-left:16px;border-left:2px solid var(--rule);color:var(--ink-dim)}
+figure{margin:0 0 1.6em}figure img{display:block;max-width:100%;height:auto;margin:0 auto}
+figcaption{font:13px var(--sans);color:var(--ink-dim);text-align:center;margin-top:8px}
+hr{border:0;border-top:1px solid var(--rule);margin:2em 0}
+code{font-size:16px}
+.list a{display:block;text-decoration:none;color:var(--ink);padding:18px 0;border-bottom:1px solid var(--rule)}
+.list .t{font-size:22px}.list .d{font:13px var(--sans);color:var(--ink-dim);margin-top:4px}
+footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font:14px var(--sans);color:var(--ink-dim)}
+footer a{color:var(--ink)}
+.sub{font:15px var(--sans);margin:40px 0 0}
+.tgrow{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:24px 0 0}
+.tgrow.solo{justify-content:flex-end}
+.nextrow{display:flex;justify-content:space-between;align-items:center;gap:24px;margin:40px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.nextrow .next{margin:0;padding:0;border:0;font-size:19px;line-height:1.5}.nextrow .dokcta{margin:0 0 0 auto;flex:none}
+.dokcta a{display:inline-block;font:16px var(--sans);padding:12px 22px;border-radius:24px;border:1px solid var(--gold);color:var(--gold);text-decoration:none}
+.dokcta a:hover{background:var(--gold);color:var(--ground)}
+@media(max-width:520px){.nextrow{flex-direction:column;align-items:flex-start}.nextrow .dokcta{margin:0}}
+footer a,.fcmt{background:none;border:0;padding:0;font:inherit;cursor:pointer;color:var(--ink-dim);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule)}
+footer a:hover,.fcmt:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-dim)}.cm.open{margin-top:32px}
+@media(max-width:520px){.tgb{font-size:14px;padding:8px 14px}}
+.after{margin:20px 0 0;font:10px var(--sans);letter-spacing:.34em;text-transform:uppercase}
+.after a,.after .cmt{background:none;border:0;padding:0;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--gold);text-decoration:none}
+.after .dot{color:var(--ink-dim);margin:0 12px}.cmlink{font:15px var(--sans);margin:12px 0 0}.cmlink a{color:var(--gold)}
+.cm .cmt::after{content:" +"}.cm.open .cmt::after{content:" −"}
+.cmw{max-height:0;overflow:hidden}.cm.open .cmw{max-height:none;margin-top:16px}
+.tgb{display:inline-block;font:15px var(--sans);padding:10px 18px;border:1px solid var(--gold);border-radius:22px;
+ text-decoration:none;color:var(--gold)}.tgb:hover{background:var(--gold);color:var(--ground)}
+.lang{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:2px;background:rgba(0,0,0,.7);
+ border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:4px}
+.lang a,.lang b{font:600 12px/1 var(--sans);letter-spacing:.14em;padding:6px 12px;border-radius:16px;text-decoration:none;color:#b9b2a8}
+.lang a:hover{color:#f2ede4}.lang b{color:#111;background:#c9a227}
+.tr{font:13px var(--sans);color:var(--ink-dim);margin:-24px 0 36px}
+.cr{font:12px/1.6 var(--sans);color:var(--ink-dim);margin:10px 0 0;opacity:.8}
+</style>
+</head>
+<body>
+<main>
+
+<a class="back" href="/writing/">← Все тексты</a>
+<h1 style="margin-top:40px">Что говорят люди</h1>
+<p class="date">19 октября 2026</p>
+
+<p class="epi">Возьми на себя ответственность за свой продукт. Назови цену.</p>
+<p>Натаха, мы с ней сидели за одной партой на алгебре. Держит развод, двоих детей.</p>
+<p>Пишет 9 октября.</p>
+<p>– Я зашла в Дока. Это прям круто. Пришлось с ним поругаться. Но свою дозу бдсм я получила. Больно он мне сделал.</p>
+<p>Подожди, говорю, больно? Или круто?</p>
+<p>– Пхахаха. Не разговаривай со мной как Док. Мне чем больнее – тем охуеннее. Как планируешь продвигать?</p>
+<p>Не знаю, я не умею продвигать. Поставил любую цену, чтобы выбрал человек.</p>
+<p>– Донат то есть? Энергетическую нагрузку денег с себя скинул.</p>
+<p>А ты бы сколько заплатила?</p>
+<p>– Человек с тремя денежными арканами в дате рождения. Но в 2007 году я бы ответила «хуй на».</p>
+<p>В 2007-м у нас был выпуск.</p>
+<p>Говорю, что не за деньги топлю, а чтобы это помогало людям.</p>
+<p>– Ага. Проходили. Ты вообще это вслух перестань говорить.</p>
+<p>Ну кто-то 200, кто-то 1000, потом будет среднее.</p>
+<p>– Ты накуриваешься там, что ли? В России давно не был, да?</p>
+<p>Год не был. Дождь льёт, я в Питере.</p>
+<p>И голосовое.</p>
+<p>– Я не пойду за 300 рублей. Я не вижу в этом ценности.</p>
+<p>Назови цену. Ты взрослый человек, ты создал свой продукт. Сядь на лавку, оцени, скажи, сколько он стоит. Что значит от 200 рублей? То есть ты себя оцениваешь… В 36 лет. Реально охуенный продукт. От стакана кофе до чего, до бизнес-ланча?</p>
+<p>Будь хозяином своего продукта.</p>
+<p>Если мне скажут: оценивай – я в эту игру не пойду. Меня вовлекают в историю, где человек не хочет брать на себя ответственность. Возьми на себя ответственность за свой продукт. Назови цену.</p>
+<p>Удар. Я хватаю руками невидимый столб. Дождь заливает экран телефона. Тапаю Натахе в ответ: «спасибо», «понял».</p>
+<p>Я проваливаюсь в чёрную пустоту. Пересылаю всё Доку, чтобы завтра обсудить.</p>
+<figure><img src="img/dok-udar.png" alt="" loading="lazy"></figure>
+<hr>
+<p>Что пишут люди, я не читаю. У меня есть индикатор. Он показывает одно из трёх: тяжёлый разговор, нормальный или благодарность.</p>
+<p>Кто-то заблокировал бота, даже не начав переписку. Я не стал смотреть, кто это, и записал правило: не смотрю. Только если человек сам попросит.</p>
+<p>Через бота ко мне ничего не приходит. Я не различаю людей и счетов не веду. Пока это держится на моём слове.</p>
+<p>Примерно тогда же написал Илюха – Java-разработчик, мы с ним работали. Спросил про анонимность. Доступ к серверу у меня есть, ответил я. Но ни переписки, ни имён я не вижу: сам так устроил. Не верь на слово, проверь. Предложил ему аудит.</p>
+<p>С прошлого поста – 111 разговоров. Один раз сработал кризис-чек: разговор о причинении вреда себе. Семь закончились благодарностью.</p>
+<p>Эти семь благодарностей и были отзывами. Надо было сразу спросить у людей, можно ли их опубликовать. Спрашивать об этом Док научился уже после. Отзывов так и не получил. Поэтому тянул с постом.</p>
+<p>Больше я ничего не знаю. Иду вслепую.</p>
+<hr>
+<p>Компания, которая живёт на донатах, не знает, сколько получит завтра. А платит каждый день. Бесплатный сервис – это самоуничтожение дела. Будущего у такой компании нет. Я не вытяну конкуренцию и не увижу, ценят ли это люди.</p>
+<p>А Доку будущее нужно. Я работаю над ним с апреля. Ходил по краю обрыва с верёвкой в рюкзаке. Бот, которого я сделал, спас мне жизнь.</p>
+<p>Натаха – <a href="https://t.me/semicheva_games">@semicheva_games</a>, Илюха – <a href="https://t.me/iturukin">@iturukin</a>.</p>
+
+<div class="nextrow"><div class="next"><span>В следующий раз</span>Первые продажи.</div><p class="dokcta"><a href="https://t.me/doktomebot?start=blog_cto-govorat-ludi">Поговорить с Доком</a></p></div>
+<footer><a href="https://t.me/beskrovnykh">Написать мне</a><span class=fd>·</span><a href="https://t.me/doktome">Подписаться</a><p class="cr">© 2026 Андрей Бескровных. Фотографии и тексты — авторские, использование без разрешения не допускается.</p></footer>
+</main>
+</body>
+</html>
