@@ -89,6 +89,17 @@ footer a:hover,.fcmt:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-d
 .cmedit button{font:14px var(--sans);padding:7px 16px;border-radius:18px;border:1px solid var(--rule);
  background:transparent;color:var(--ink);cursor:pointer}
 .cmedit button:hover{border-color:var(--gold);color:var(--gold)}
+.cmi.sub1{margin-left:22px;padding-left:16px;border-left:2px solid var(--rule)}
+.cmi.sub2{margin-left:44px;padding-left:16px;border-left:2px solid var(--rule)}
+@media(max-width:520px){.cmi.sub1{margin-left:10px}.cmi.sub2{margin-left:20px}}
+.cmreply{margin:10px 0 0}
+.cmreply textarea,.cmreply input{width:100%;font:16px/1.5 var(--serif);color:var(--ink);
+ background:transparent;border:1px solid var(--rule);border-radius:8px;padding:10px}
+.cmreply input{margin-top:8px}
+.cmreply p{display:flex;gap:14px;margin:8px 0 0}
+.cmreply button{font:14px var(--sans);padding:7px 16px;border-radius:18px;border:1px solid var(--rule);
+ background:transparent;color:var(--ink);cursor:pointer}
+.cmreply button:hover{border-color:var(--gold);color:var(--gold)}
 </style>
 </head>
 <body>
@@ -107,7 +118,7 @@ footer a:hover,.fcmt:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-d
 <p>Я долго размышлял, как его распространять и можно ли заработать на этом. Времени у меня мало, ресурсы ограничены, и я никогда не продавал ботов. Мне нужен план.</p>
 
 <div class="nextrow"><div class="next"><span>В следующий раз</span><a href="https://beskrovnykh.github.io/writing/kompania.html">Можно ли построить компанию, когда ты сомневаешься в своем мнении?</a>.</div><p class="dokcta"><a href="https://t.me/doktomebot?start=blog_vision">Поговорить с Доком</a></p></div>
-<!--cmts--><section class="cmts" id="otkliki" data-slug="vision" data-lang="ru" data-api="https://comments.doktome.app" data-words="{&quot;anon&quot;: &quot;Анонимно&quot;, &quot;cmts&quot;: &quot;Отклики&quot;, &quot;cmts0&quot;: &quot;Оставить отклик&quot;, &quot;edit&quot;: &quot;изменить&quot;, &quot;del&quot;: &quot;удалить&quot;, &quot;save&quot;: &quot;сохранить&quot;, &quot;cancel&quot;: &quot;отмена&quot;, &quot;sending&quot;: &quot;отправляю…&quot;, &quot;held&quot;: &quot;Похоже на ссылку или другой алфавит - Андрей посмотрит и покажет.&quot;, &quot;err&quot;: &quot;не отправилось, попробуй ещё раз&quot;, &quot;sure&quot;: &quot;Удалить отклик?&quot;}"><p class="lbl" data-cm="lbl">Оставить отклик</p><div data-cm="list"></div><form class="cmf" method="post" action="https://comments.doktome.app/add" accept-charset="utf-8"><input type="hidden" name="slug" value="vision"><input type="hidden" name="lang" value="ru"><input class="hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true"><textarea name="text" rows="4" maxlength="1200" required placeholder="Что отозвалось?"></textarea><input type="text" name="name" maxlength="40" placeholder="Имя - можно не писать"><div class="row"><button type="submit">Отправить</button><p class="hint">Имя не обязательно: без него будет «Анонимно». Текст появится на этой странице.</p></div><p class="cmnote" data-cm="note" hidden></p></form></section><script>
+<!--cmts--><section class="cmts" id="otkliki" data-slug="vision" data-lang="ru" data-api="https://comments.doktome.app" data-words="{&quot;anon&quot;: &quot;Анонимно&quot;, &quot;cmts&quot;: &quot;Отклики&quot;, &quot;cmts0&quot;: &quot;Оставить отклик&quot;, &quot;edit&quot;: &quot;изменить&quot;, &quot;del&quot;: &quot;удалить&quot;, &quot;save&quot;: &quot;сохранить&quot;, &quot;cancel&quot;: &quot;отмена&quot;, &quot;reply&quot;: &quot;ответить&quot;, &quot;phreply&quot;: &quot;Ответ&quot;, &quot;phname&quot;: &quot;Имя - можно не писать&quot;, &quot;send&quot;: &quot;Отправить&quot;, &quot;sending&quot;: &quot;отправляю…&quot;, &quot;held&quot;: &quot;Похоже на ссылку или другой алфавит - Андрей посмотрит и покажет.&quot;, &quot;err&quot;: &quot;не отправилось, попробуй ещё раз&quot;, &quot;sure&quot;: &quot;Удалить отклик?&quot;}"><p class="lbl" data-cm="lbl">Оставить отклик</p><div data-cm="list"></div><form class="cmf" method="post" action="https://comments.doktome.app/add" accept-charset="utf-8"><input type="hidden" name="slug" value="vision"><input type="hidden" name="lang" value="ru"><input class="hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true"><textarea name="text" rows="4" maxlength="1200" required placeholder="Что отозвалось?"></textarea><input type="text" name="name" maxlength="40" placeholder="Имя - можно не писать"><div class="row"><button type="submit">Отправить</button><p class="hint">Имя не обязательно: без него будет «Анонимно». Текст появится на этой странице.</p></div><p class="cmnote" data-cm="note" hidden></p></form></section><script>
 (function(){
   var s = document.getElementById('otkliki'); if (!s) return;
   var api = s.dataset.api, slug = s.dataset.slug, lang = s.dataset.lang;
@@ -137,67 +148,121 @@ footer a:hover,.fcmt:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-d
   }
 
   // Один отклик. Текст ставим только через textContent: чужая строка не должна
-  // становиться разметкой.
-  function item(c){
-    var box = document.createElement('div'); box.className = 'cmi';
+  // становиться разметкой. depth - только вид, глубже второго уровня не сдвигаем,
+  // иначе на телефоне ветка уезжает в щель.
+  function item(c, depth){
+    var box = document.createElement('div');
+    box.className = 'cmi' + (depth ? ' sub' + Math.min(depth, 2) : '');
     var head = document.createElement('p'); head.className = 'who';
     head.textContent = (c.name || W.anon) + (when(c.ts) ? ' · ' + when(c.ts) : '');
     var body = document.createElement('p'); body.textContent = c.text;
     box.appendChild(head); box.appendChild(body);
-    if (tok(c.id)) box.appendChild(tools(c, box, body));
+    box.appendChild(tools(c, box, body, depth));
     return box;
   }
 
-  // «изменить» и «удалить» - только автору отклика и только пока открыто окно.
-  function tools(c, box, body){
+  // «ответить» - всем, «изменить» и «удалить» - только автору отклика и только
+  // пока открыто окно.
+  function tools(c, box, body, depth){
     var row = document.createElement('p'); row.className = 'cmown';
-    var edit = document.createElement('button'); edit.type = 'button'; edit.textContent = W.edit;
-    var drop = document.createElement('button'); drop.type = 'button'; drop.textContent = W.del;
-    edit.onclick = function(){
-      var ta = document.createElement('textarea'); ta.value = c.text; ta.rows = 3;
-      var ok = document.createElement('button'); ok.type = 'button'; ok.textContent = W.save;
-      var no = document.createElement('button'); no.type = 'button'; no.textContent = W.cancel;
-      var wrap = document.createElement('div'); wrap.className = 'cmedit';
-      var btns = document.createElement('p'); btns.appendChild(ok); btns.appendChild(no);
-      wrap.appendChild(ta); wrap.appendChild(btns);
-      box.replaceChild(wrap, body); row.hidden = true;
-      no.onclick = function(){ box.replaceChild(body, wrap); row.hidden = false; };
-      ok.onclick = function(){
-        ok.disabled = true;
-        post('/edit', {slug:slug, lang:lang, id:c.id, tok:tok(c.id), text:ta.value}, function(err, j){
-          ok.disabled = false;
+    var answer = document.createElement('button');
+    answer.type = 'button'; answer.textContent = W.reply;
+    answer.onclick = function(){ replyForm(c, box, row); };
+    row.appendChild(answer);
+    if (tok(c.id)) {
+      var edit = document.createElement('button'); edit.type = 'button'; edit.textContent = W.edit;
+      var drop = document.createElement('button'); drop.type = 'button'; drop.textContent = W.del;
+      edit.onclick = function(){ editForm(c, box, body, row); };
+      drop.onclick = function(){
+        if (!confirm(W.sure)) return;
+        post('/edit', {slug:slug, lang:lang, id:c.id, tok:tok(c.id), drop:'1'}, function(err){
           if (err) { say(err); return; }
-          c.text = j.item.text; body.textContent = c.text;
-          box.replaceChild(body, wrap); row.hidden = false;
-          say(j.item.held ? W.held : '');
+          load();
         });
       };
-    };
-    drop.onclick = function(){
-      if (!confirm(W.sure)) return;
-      post('/edit', {slug:slug, lang:lang, id:c.id, tok:tok(c.id), drop:'1'}, function(err){
+      row.appendChild(edit); row.appendChild(drop);
+    }
+    return row;
+  }
+
+  function editForm(c, box, body, row){
+    var ta = document.createElement('textarea'); ta.value = c.text; ta.rows = 3;
+    var ok = document.createElement('button'); ok.type = 'button'; ok.textContent = W.save;
+    var no = document.createElement('button'); no.type = 'button'; no.textContent = W.cancel;
+    var wrap = document.createElement('div'); wrap.className = 'cmedit';
+    var btns = document.createElement('p'); btns.appendChild(ok); btns.appendChild(no);
+    wrap.appendChild(ta); wrap.appendChild(btns);
+    box.replaceChild(wrap, body); row.hidden = true;
+    no.onclick = function(){ box.replaceChild(body, wrap); row.hidden = false; };
+    ok.onclick = function(){
+      ok.disabled = true;
+      post('/edit', {slug:slug, lang:lang, id:c.id, tok:tok(c.id), text:ta.value}, function(err, j){
+        ok.disabled = false;
         if (err) { say(err); return; }
-        box.remove(); count();
+        c.text = j.item.text; body.textContent = c.text;
+        box.replaceChild(body, wrap); row.hidden = false;
+        say(j.held ? W.held : '');
       });
     };
-    row.appendChild(edit); row.appendChild(drop);
-    return row;
+  }
+
+  function replyForm(c, box, row){
+    if (box.querySelector('.cmreply')) return;
+    var wrap = document.createElement('div'); wrap.className = 'cmreply';
+    var ta = document.createElement('textarea'); ta.rows = 3; ta.placeholder = W.phreply;
+    var nm = document.createElement('input'); nm.type = 'text'; nm.maxLength = 40;
+    nm.placeholder = W.phname;
+    var ok = document.createElement('button'); ok.type = 'button'; ok.textContent = W.send;
+    var no = document.createElement('button'); no.type = 'button'; no.textContent = W.cancel;
+    var btns = document.createElement('p'); btns.appendChild(ok); btns.appendChild(no);
+    wrap.appendChild(ta); wrap.appendChild(nm); wrap.appendChild(btns);
+    box.appendChild(wrap); ta.focus();
+    no.onclick = function(){ wrap.remove(); };
+    ok.onclick = function(){
+      if (!ta.value.trim()) return;
+      ok.disabled = true; say(W.sending);
+      post('/add', {slug:slug, lang:lang, text:ta.value, name:nm.value, parent:c.id},
+        function(err, j){
+          ok.disabled = false;
+          if (err) { say(err); return; }
+          wrap.remove();
+          if (j.held) { say(W.held); return; }
+          keep(j.item.id, j.tok); say('');
+          // Перечитываем список: ответ должен встать в своё место в ветке,
+          // а не просто в конец.
+          load();
+        });
+    };
   }
 
   function count(){ lbl.textContent = list.children.length ? W.cmts : W.cmts0; }
 
   function draw(items){
+    var ids = {}, kids = {};
+    items.forEach(function(c){ ids[c.id] = 1; });
+    items.forEach(function(c){
+      var p = (c.parent && ids[c.parent]) ? c.parent : '';
+      (kids[p] = kids[p] || []).push(c);
+    });
     list.textContent = '';
-    items.forEach(function(c){ list.appendChild(item(c)); });
+    (function walk(parent, depth){
+      (kids[parent] || []).forEach(function(c){
+        list.appendChild(item(c, depth));
+        walk(c.id, depth + 1);
+      });
+    })('', 0);
     count();
   }
 
   // Показываем живой список: вшитый в страницу - только запас на случай,
   // если скрипт не выполнился или сервер не ответил.
-  fetch(api + '/list?slug=' + encodeURIComponent(slug) + '&lang=' + encodeURIComponent(lang))
-    .then(function(r){ return r.json(); })
-    .then(function(d){ draw(d.items || []); })
-    .catch(function(){});
+  function load(){
+    fetch(api + '/list?slug=' + encodeURIComponent(slug) + '&lang=' + encodeURIComponent(lang))
+      .then(function(r){ return r.json(); })
+      .then(function(d){ draw(d.items || []); })
+      .catch(function(){});
+  }
+  load();
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -212,7 +277,7 @@ footer a:hover,.fcmt:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-d
       ta.value = ''; nm.value = '';
       if (j.held) { say(W.held); return; }
       keep(j.item.id, j.tok);
-      list.appendChild(item(j.item)); count(); say('');
+      list.appendChild(item(j.item, 0)); count(); say('');
     });
   });
 })();
