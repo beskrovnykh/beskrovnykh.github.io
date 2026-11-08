@@ -62,6 +62,22 @@ footer a:hover,.fcmt:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-d
 .lang a:hover{color:#f2ede4}.lang b{color:#111;background:#c9a227}
 .tr{font:13px var(--sans);color:var(--ink-dim);margin:-24px 0 36px}
 .cr{font:12px/1.6 var(--sans);color:var(--ink-dim);margin:10px 0 0;opacity:.8}
+.cmts{margin:56px 0 0;padding-top:28px;border-top:1px solid var(--rule)}
+.cmts .lbl{margin:0 0 20px}
+.cmi{margin:0 0 24px}
+.cmi .who{font:12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin:0 0 6px}
+.cmi p{font-size:18px;margin:0;white-space:pre-wrap}
+.cmf{margin:32px 0 0}
+.cmf textarea,.cmf input[type=text]{width:100%;font:17px/1.5 var(--serif);color:var(--ink);
+ background:transparent;border:1px solid var(--rule);border-radius:8px;padding:12px}
+.cmf textarea{min-height:110px;resize:vertical}
+.cmf input[type=text]{margin-top:10px}
+.cmf .row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:12px}
+.cmf button{font:16px var(--sans);padding:11px 24px;border-radius:22px;border:1px solid var(--gold);
+ background:transparent;color:var(--gold);cursor:pointer}
+.cmf button:hover{background:var(--gold);color:var(--ground)}
+.cmf .hint{font:13px/1.5 var(--sans);color:var(--ink-dim);margin:0;flex:1 1 220px}
+.cmf .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 </style>
 </head>
 <body>
@@ -85,6 +101,7 @@ footer a:hover,.fcmt:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-d
 <p>Your feedback is the best birthday present I could get.</p>
 
 <div class="nextrow"><div class="next"><span>Next time</span>What you wrote.</div><p class="dokcta"><a href="https://t.me/doktomebot?start=blog_real-nost_en">Talk to Dok</a></p></div>
+<!--cmts--><section class="cmts" id="otkliki"><form class="cmf" method="post" action="https://comments.doktome.app/add" accept-charset="utf-8"><input type="hidden" name="slug" value="real-nost"><input type="hidden" name="lang" value="en"><input class="hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true"><textarea name="text" rows="4" maxlength="1200" required placeholder="What resonated?"></textarea><input type="text" name="name" maxlength="40" placeholder="Name - optional"><div class="row"><button type="submit">Send</button><p class="hint">A name is optional: without one it shows as «Anonymous». Your text will appear on this page.</p></div></form></section><!--/cmts-->
 <footer><a href="https://t.me/beskrovnykh">Message me</a><p class="cr">© 2026 Andrei Beskrovnykh. Photographs and texts are the author’s; no use without permission.</p></footer>
 </main>
 </body>
