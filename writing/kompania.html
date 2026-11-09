@@ -100,6 +100,17 @@ footer a:hover,.fcmt:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-d
 .cmreply button{font:14px var(--sans);padding:7px 16px;border-radius:18px;border:1px solid var(--rule);
  background:transparent;color:var(--ink);cursor:pointer}
 .cmreply button:hover{border-color:var(--gold);color:var(--gold)}
+
+.subpop{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translate(-50%,24px);
+ width:min(440px,calc(100% - 32px));background:var(--ground);color:var(--ink);border:1px solid var(--rule);
+ border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:16px 18px;display:flex;gap:14px;align-items:center;
+ opacity:0;pointer-events:none;transition:opacity .35s,transform .35s;z-index:20;font:15px/1.4 var(--sans)}
+.subpop.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.subpop p{margin:0;font:15px/1.4 var(--sans);flex:1}
+.subpop .go{flex:none;display:inline-block;padding:9px 16px;border-radius:20px;background:var(--gold);color:var(--ground);text-decoration:none;font:15px var(--sans)}
+.subpop .x{flex:none;background:none;border:0;color:var(--ink-dim);font:22px/1 var(--sans);cursor:pointer;padding:4px}
+@media(max-width:420px){.subpop{flex-wrap:wrap}.subpop p{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.subpop{transition:none}}
 </style>
 </head>
 <body>
@@ -281,5 +292,24 @@ footer a:hover,.fcmt:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-d
 </script><!--/cmts-->
 <footer><a href="https://t.me/beskrovnykh">Написать мне</a><span class=fd>·</span><a href="https://t.me/doktome">Подписаться</a><p class="cr">© 2026 Андрей Бескровных. Фотографии и тексты — авторские, использование без разрешения не допускается.</p></footer>
 </main>
+<div class="subpop" id="subpop" role="dialog" aria-label="Подписка на канал">
+<p>Новые посты выходят в Telegram-канале.</p>
+<a class="go" href="https://t.me/doktome" id="subgo">Подписаться</a>
+<button class="x" id="subx" aria-label="Не сейчас">×</button>
+</div>
+<script>(function(){
+var K="subpop",DAY=864e5,el=document.getElementById("subpop");
+function get(){try{return localStorage.getItem(K)}catch(e){return null}}
+function set(v){try{localStorage.setItem(K,v)}catch(e){}}
+var v=get();if(v==="sub"||(v&&Date.now()-Number(v)<30*DAY))return;
+var ref=document.referrer||"",ua=navigator.userAgent||"";
+if(/t\.me|telegram/i.test(ref)||/Telegram/i.test(ua))return;
+document.querySelectorAll(".tgsub").forEach(function(a){a.addEventListener("click",function(){set("sub")})});
+var shown=false;function check(){if(shown)return;var m=document.querySelector("main");if(!m)return;
+var r=(window.scrollY+window.innerHeight-m.offsetTop)/m.offsetHeight;if(r>=0.6){shown=true;el.classList.add("on");window.removeEventListener("scroll",check)}}
+window.addEventListener("scroll",check,{passive:true});
+document.getElementById("subx").onclick=function(){el.classList.remove("on");set(String(Date.now()))};
+document.getElementById("subgo").onclick=function(){set("sub");el.classList.remove("on")};
+})();</script>
 </body>
 </html>
