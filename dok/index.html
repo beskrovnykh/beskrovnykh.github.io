@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Док - Андрей Бескровных</title>
+<meta name="description" content="Я делаю Дока - AI-собеседника, который помнит, говорит правду и даёт преимущество в моменте.">
+<style>
+:root{--ground:#f4f1ea;--ink:#14120f;--ink-dim:#6d655b;--gold:#8a6a12;--rule:#e0d9cc;
+ --serif:Georgia,"Iowan Old Style","Times New Roman",serif;--sans:"Helvetica Neue",Helvetica,Arial,sans-serif}
+@media(prefers-color-scheme:dark){:root{--ground:#0b0a09;--ink:#f2ede4;--ink-dim:#9a9186;--gold:#c9a227;--rule:#241f1b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+main{max-width:640px;margin:0 auto;padding:80px 16px 80px}
+header{display:flex;gap:28px;align-items:center;margin-bottom:56px}
+.me{width:112px;height:112px;border-radius:50%;object-fit:cover;flex:none}
+h1{font-weight:400;font-size:32px;line-height:1.15;margin:0 0 12px;letter-spacing:-.01em}
+.lead{font:17px/1.55 var(--sans);margin:0;color:var(--ink-dim)}
+.lead .dim{color:var(--ink-dim)}
+nav{border-top:1px solid var(--rule)}
+nav a{display:flex;justify-content:space-between;align-items:baseline;padding:18px 2px;border-bottom:1px solid var(--rule);
+ color:var(--ink);text-decoration:none;font-size:20px;transition:padding .15s,color .15s}
+nav a .arr{font-family:var(--sans);color:var(--ink-dim);transition:transform .15s,color .15s}
+nav a:hover{color:var(--gold);padding-left:8px}
+nav a:hover .arr{color:var(--gold);transform:translateX(4px)}
+.contact{margin-top:40px;font:14px var(--sans);color:var(--ink-dim)}
+.contact a{color:var(--ink-dim)}
+@media(max-width:520px){header{flex-direction:column;align-items:flex-start;gap:20px}.me{width:88px;height:88px}main{padding-top:48px}}
+.cr{font:12px/1.6 var(--sans);color:var(--ink-dim);margin:10px 0 0;opacity:.8}
+.fl a{color:var(--ink-dim);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule)}.fl a:hover{color:var(--gold)}.fd{margin:0 10px;color:var(--ink-dim)}
+
+.back{font:14px var(--sans);color:var(--ink-dim);text-decoration:none}.back:hover{color:var(--gold)}
+h1{font-size:44px;margin:28px 0 16px}
+.lead{font:19px/1.55 var(--sans);color:var(--ink);margin:0 0 10px}
+.lead2{font:17px/1.55 var(--sans);color:var(--ink-dim);margin:0 0 36px}
+.status{display:inline-flex;align-items:center;gap:8px;font:14px var(--sans);color:var(--ink-dim);text-decoration:none;border:1px solid var(--rule);border-radius:100px;padding:6px 14px;margin:0 0 36px}
+.status[hidden]{display:none}.status:hover{color:var(--gold)}
+.status .sd{width:8px;height:8px;border-radius:50%;background:#7e9c6e}.status.down .sd{background:var(--gold)}
+nav a.main{font-size:22px}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="/">← Андрей Бескровных</a>
+<h1>Док</h1>
+<p class="lead">Я делаю Дока - AI-собеседника, который помнит, говорит правду и даёт преимущество в моменте.</p>
+<p class="lead2">Пространство, где тебя слышат.</p>
+<a class="status" id="dok-status" href="https://api.doktome.app/status" hidden><span class="sd"></span><span class="st"></span></a>
+<nav>
+<a class="main" href="https://t.me/doktomebot?start=blog_main">Поговорить с Доком<span class="arr">↗</span></a>
+<a href="https://doktome.app">Сайт Дока<span class="arr">↗</span></a>
+<a href="https://api.doktome.app/status">Работает ли Док<span class="arr">↗</span></a>
+</nav>
+<p class="cr">© 2026 Андрей Бескровных</p>
+</main>
+<script>
+(function(){var a=document.getElementById('dok-status');if(!a||!window.fetch)return;
+fetch('https://api.doktome.app/status.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
+a.classList.toggle('down',!d.ok);a.querySelector('.st').textContent=d.ok?'Сейчас работает':'Сейчас не отвечает';a.hidden=false}).catch(function(){})})();
+</script>
+</body>
+</html>
